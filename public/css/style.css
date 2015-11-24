@@ -1,5 +1,9 @@
 div.container-fluid{
-	background:url("../images/fondo.jpg");
+	background:url("../images/fondo.gif") repeat-x;
+	
+	font-family:sans-serif;
+	font-size: 0.75em;
+	color: #999;
 	margin: 0px;
 	padding: 0px;
 }
