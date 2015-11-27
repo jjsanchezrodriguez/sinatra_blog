@@ -15,7 +15,24 @@ end
 
 post "/sort" do
 	@my_blog = blog
-	blog.sort_by_date
-	erb :index
+	@my_blog.sort_by_date
+	redirect("/") 
+
+end
+
+post "/form_add" do
+	@my_blog = blog
+	erb :add 
+end
+
+post "/add" do
+	@my_blog = blog
+	@my_blog.add_post(params[:post_title],params[:post_text])
+	# binding.pry
+	redirect("/") 
+end
+
+post "/back" do
+	redirect("/") 
 
 end

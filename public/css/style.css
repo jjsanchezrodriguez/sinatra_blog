@@ -71,6 +71,14 @@ img{
 	background: rgba(255,255,255,0.2);
 }
 
+.left {
+	float:left;
+}
+
+.form_class {
+	margin-bottom: 30px;
+
+}
 /*
 
 .my-input{
