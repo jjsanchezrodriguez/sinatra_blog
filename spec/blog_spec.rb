@@ -14,7 +14,7 @@
 	  end
 
 	  it "create add a new post" do
-	  	my_blog.add_post("Sexto Post", "El patio de mi casa es particular cuando llueve no se moja como los demas")
+	  	my_blog.add_post("Sexto Post", "El patio de mi casa es particular cuando llueve no se moja como los demas" ,"pepe", "submarinismo")
 	  	expect(my_blog.posts.last.text).to eq("El patio de mi casa es particular cuando llueve no se moja como los demas")
 	  end
 
