@@ -12,3 +12,10 @@ get "/" do
 	@my_blog = blog
 	erb :index
 end
+
+post "/sort" do
+	@my_blog = blog
+	blog.sort_by_date
+	erb :index
+
+end

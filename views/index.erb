@@ -8,27 +8,56 @@
 
     <title>Sinatra Blog</title> 
   </head>
+
   <body>
     <div class = "container-fluid">
-      <head>
+
+      <header class = "row">
         <h1>Sinatra Blog</h1>
-      </head>  
-      <div class="table-responsive">
-        <table class="table">
-           <tr>
-              <td>Titulo</td>
-              <td>Fecha</td>
-              <td>Texto</td>
-          </tr>
-            <% @my_blog.blogs.each do |post| %>
-            <tr>
-              <td><%="#{post.title}"%></td>
-              <td><%="#{post.date.strftime("%x")}"%></td>
-              <td><%="#{post.text}"%></td>
-            </tr>  
+      </header> 
+
+       <nav class = "row">
+          <div class="col-sm-8"> 
+            <form action="/sort" method="POST">
+              <button type="submit" class="btn btn-primary my-btn-default background-opacity-1">Ordenar</button>
+            </form>
+          </div>
+
+          <div class="col-sm-4">
+            <button type="button" class="btn btn-primary my-btn-default background-opacity-1">Imagenes</button>
+            <button type="button" class="btn btn-primary my-btn-default background-opacity-1">Lugares</button>
+            <button type="button" class="btn btn-primary my-btn-default background-opacity-1">Contactos</button>
+          </div>
+      </nav>  
+
+      <section class = "row">
+        <div class="col-sm-9">
+           <% @my_blog.posts.each do |post| %>
+            <article class = "post">
+              <div class = "title"><%="#{post.title}"%></div>
+              <div class = "date"><%="#{post.date.strftime("%x")}"%></div>
+              <div class = "text"><%="#{post.text}"%></div>
+            </article> 
           <% end %>
-        </table>
-      </div>
+        </div>
+
+        <div class="col-sm-3">
+          <aside class="miscelania">
+            <h3> Hola que tal</h3>
+            <div class = "img">
+              <img src = "/images/tiacarmen.jpg">
+            </div>
+          </aside>
+        </div> 
+      </section>
+
+      <footer class = "row">
+       
+        <form action="/add_post" method="POST">
+          <button type="submit" class="btn btn-primary my-btn-default background-opacity-1">Nuevo</button>
+        </form>
+       
+      </footer>  
     </div> <!-- fin del container-fluid   -->
   </body>
 </html>
