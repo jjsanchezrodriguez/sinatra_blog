@@ -18,9 +18,7 @@
 
        <nav class = "row">
           <div class="col-sm-8"> 
-            <form action="/sort" method="POST">
-              <button type="submit" class="btn btn-primary my-btn-default background-opacity-1">Ordenar</button>
-            </form>
+           
           </div>
 
           <div class="col-sm-4">
@@ -32,14 +30,11 @@
 
       <section class = "row">
         <div class="col-sm-9">
-           <% @my_blog.posts.each_with_index do |post, index|%>
-            <article class = "post">
-              <div class = "title"> <a href="/show/<%=index%>"><%="#{post.title}"%> </a></div>
-              <div class = "date"><%="#{post.date.strftime("%x")}"%></div>
-              <div class = "text"><%="#{post.text}"%></div>
-
-            </article> 
-          <% end %>
+          <arcticle>
+             <div><%=@my_post.text%> </div>
+             <div><%=@my_post.author%> </div>
+             <div><%=@my_post.category%> </div>
+          </article>
         </div>
 
         <div class="col-sm-3">
@@ -53,12 +48,12 @@
       </section>
 
       <footer class = "row">
-       
-        <form action="/form_add" method="POST">
-          <button type="submit" class="btn btn-primary my-btn-default background-opacity-1">Nuevo</button>
+        <form action = "/back" method="GET">
+          <button type="submit" class="btn btn-primary my-btn-default background-opacity-1">Volver</button>
         </form>
        
       </footer>  
     </div> <!-- fin del container-fluid   -->
   </body>
 </html>
+
